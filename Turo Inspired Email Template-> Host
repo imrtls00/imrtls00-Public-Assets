@@ -1,0 +1,498 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <title>imrtls00</title>
+    <style type="text/css">
+      @font-face {
+        font-family: 'BasisGrotesqueMedium';
+        src: url('https://resources.turo.com/resources/fonts/basis/basis_grotesque_medium.woff') format('woff'),
+          url('https://resources.turo.com/resources/fonts/basis/basis_grotesque_medium.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'BasisGrotesqueBold';
+        src: url('https://resources.turo.com/resources/fonts/basis/basis_grotesque_bold.woff') format('woff'),
+          url('https://resources.turo.com/resources/fonts/basis/basis_grotesque_bold.woff2') format('woff2');
+        font-weight: bold;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'BasisGrotesqueBlack';
+        src: url('https://resources.turo.com/resources/fonts/basis/basis_grotesque_black.woff') format('woff'),
+          url('https://resources.turo.com/resources/fonts/basis/basis_grotesque_black.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'BasisGrotesqueRegular';
+        src: url('https://resources.turo.com/resources/fonts/basis/basis_grotesque_regular.woff') format('woff'),
+          url('https://resources.turo.com/resources/fonts/basis/basis_grotesque_regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: 'Plantin';
+        src: url('https://resources.turo.com/resources/fonts/plantin/plantin.woff') format('woff'),
+          url('https://resources.turo.com/resources/fonts/plantin/plantin.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+      }
+      p {
+        margin: 1em 0;
+        /* Yahoo! Mail removes paragraph margins */
+      }
+      strong {
+        font-family: BasisGrotesqueBlack, BasisGrotesqueMedium, AvenirNext-Bold, HelveticaNeue-Bold, 'Roboto Bold', sans-serif;
+      }
+      @media only screen and (max-device-width: 480px) {
+        .body-pane {
+          background: none !important;
+          padding: 5px 0 !important
+        }
+        .header-logo-cell {
+          padding: 10px !important
+        }
+        .main-table {
+          width: 420px !important
+        }
+        .have-a-question {
+          display: block
+        }
+        .header-image,
+        .footer-image {
+          width: 82px !important;
+          height: 30px !important
+        }
+        .driver-details-wrapper {
+          padding: 15px 0 0 0 !important
+        }
+        .trip-float-wrapper {
+          width: 100% !important
+        }
+        .request-details-padding {
+          padding-right: 20px !important
+        }
+        .vehicle-image {
+          height: 216px !important;
+          width: 100% !important;
+        }
+        .button-wrapper {
+          padding: 10px 0;
+        }
+        .app-store-banner .left {
+          width: 100% !important
+        }
+        .app-store-banner .right {
+          width: 100% !important
+        }
+        .app-store-banner .right td {
+          padding-left: 73px;
+          padding-top: 4px !important;
+          text-align: left !important
+        }
+        .map-image-link img {
+          content: url('http://maps.googleapis.com/maps/api/staticmap?center=36.1843800%2C-86.7470600&maptype=roadmap&zoom=16&markers=color%3Ablue%7C36.1843800%2C-86.7470600&key=AIzaSyB6jUe1D9E5dg1bcp05b3AileqGH_So0jc&size=360x186&scale=1&signature=_2aBTEqYvxbuh2VNhEW0hM0BNaE=');
+        }
+      }
+      @media only screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2),
+      (min--moz-device-pixel-ratio: 2),
+      (min-resolution: 2dppx) {
+        .map-image-link img {
+          content: url('http://maps.googleapis.com/maps/api/staticmap?center=36.1843800%2C-86.7470600&maptype=roadmap&zoom=16&markers=color%3Ablue%7C36.1843800%2C-86.7470600&key=AIzaSyB6jUe1D9E5dg1bcp05b3AileqGH_So0jc&size=360x186&scale=2&signature=etj4IQOA-fyAKLDWfwI3lppjL1s=');
+        }
+      }
+      .message_box_green {
+        position: relative;
+        background: white;
+        width: 100%;
+      }
+      .message_box_green:after,
+      .message_box_green:before {
+        bottom: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+      }
+      .message_box_green:after {
+        border-bottom-color: white;
+        border-width: 8px;
+        left: 50%;
+        margin-left: -8px;
+      }
+      .message_box_green:before {
+        border-bottom-color: #5ed28b;
+        border-width: 9px;
+        left: 50%;
+        margin-left: -9px;
+      }
+      .message_box_purple {
+        position: relative;
+        background: white;
+        width: 100%;
+      }
+      .message_box_purple:after,
+      .message_box_purple:before {
+        bottom: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+      }
+      .message_box_purple:after {
+        border-bottom-color: white;
+        border-width: 8px;
+        left: 50%;
+        margin-left: -8px;
+      }
+      .message_box_purple:before {
+        border-bottom-color: #8f63f4;
+        border-width: 9px;
+        left: 50%;
+        margin-left: -9px;
+      }
+      .message_box_blurple {
+        position: relative;
+        background: white;
+        width: 100%;
+      }
+      .message_box_blurple:after,
+      .message_box_blurple:before {
+        bottom: 100%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+      }
+      .message_box_blurple:after {
+        border-bottom-color: white;
+        border-width: 7px;
+        left: 50%;
+        margin-left: -7px;
+      }
+      .message_box_blurple:before {
+        border-bottom-color: #593CFB;
+        border-width: 9px;
+        left: 50%;
+        margin-left: -9px;
+      }
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+      a img {
+        outline: none;
+        border: none;
+      }
+      td {
+        font-family: BasisGrotesqueRegular, BasisGrotesqueMedium, Avenir-Medium, HelveticaNeue-Medium, 'Roboto Medium', sans-serif;
+        color: #000000
+      }
+      .star {
+        float: left;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: 15px 15px;
+      }
+      .Basis_Grotesque_Black_Font {
+        font-family: BasisGrotesqueBlack, BasisGrotesqueMedium, AvenirNext-Bold, HelveticaNeue-Bold, 'Roboto Bold', sans-serif;
+      }
+      .reimbursement-details-item-title {
+        font-size: 21px;
+        line-height: 28px;
+        font-family: BasisGrotesqueBlack, BasisGrotesqueMedium, AvenirNext-Bold, HelveticaNeue-Bold, 'Roboto Bold', sans-serif;
+        color: #000000;
+        padding: 14px 20px;
+      }
+      .reimbursement-details-item-price {
+        font-size: 16px;
+        line-height: 24px;
+        font-family: BasisGrotesqueRegular, BasisGrotesqueMedium, Avenir-Medium, HelveticaNeue-Medium, 'Roboto Medium', sans-serif;
+        text-align: right;
+        margin-right: 20px;
+        vertical-align: baseline;
+      }
+      .reimbursement-details-item-price>p {
+        background-color: #e7e7e7;
+        border-radius: 4px;
+        display: inline-block;
+        padding: 4px 8px;
+        margin-right: 20px;
+      }
+      .reimbursement-details-item-description {
+        font-size: 16px;
+        line-height: 22px;
+        font-family: BasisGrotesqueRegular, BasisGrotesqueMedium, Avenir-Medium, HelveticaNeue-Medium, 'Roboto Medium', sans-serif;
+        padding: 0 20px;
+        margin: 10px 0 20px;
+      }
+      .reimbursement-totals {
+        text-align: right;
+        padding: 10px;
+        background-color: #F4F4F4;
+      }
+      .reimbursement-details-item-spacer {
+        border-bottom: 0.5px solid #e7e7e7;
+        margin: 0 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="body-pane" style="background:#25262A;font-family:BasisGrotesqueMedium, Avenir-Medium, HelveticaNeue-Medium, 'Roboto Medium', sans-serif;font-size:16px;color:#000000">
+      <table width="100%">
+        <tr>
+          <td align="center">
+            <div class="main-table" style="width:440px;margin:0 auto;background:#25262A;padding-top:45px;">
+              <table class="main-table" width="420" border="0" cellspacing="0" cellpadding="0" style="margin:0;border-color:#E5F1FF;border-style:solid;border-width:2px 2px 0 2px;border-bottom-color:white">
+                <tr>
+                  <td style="width:416px;padding:30px 0 0">
+                  </td>
+                </tr>
+              </table>
+              <table class="main-table" width="420" border="0" cellspacing="0" cellpadding="0" style="margin:0;border-color:#E5F1FF;border-style:solid;border-width:0 2px 0 0;border-bottom-color:white">
+                <tr>
+                  <td align="left" style="width:416px">
+                    <a href="https://imrtls00.xyz/" style="display:block">
+                      <img class="header-image" style="display:block" src="https://imrtls00.xyz/wp-content/uploads/2022/04/email-corner-logo.png" alt="imrtls00" title="imrtls00" width="82">
+                    </a>
+                  </td>
+                </tr>
+              </table>
+              <table class="main-table" width="420" border="0" cellspacing="0" cellpadding="0" style="margin:0;border-color:#E5F1FF;border-style: solid;border-width: 0 2px 2px 2px;border-top-color:white">
+                <tr>
+                  <td style="padding:28px">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td align="center">
+                          <p>
+                            <span style="
+                display:inline-block;
+                padding-bottom:7px;
+                font-family:BasisGrotesqueBlack, BasisGrotesqueMedium, AvenirNext-Bold, HelveticaNeue-Bold, 'Roboto Bold', sans-serif;
+                font-size:28px;
+                color:#E5F1FF;
+                line-height:32px;">
+            [Name] has sent you a message
+        </span>
+                          </p>
+                          <p style="color:#E5F1FF;">
+                            <span style="
+            display:inline-block;
+            padding-bottom:7px;
+            font-family:BasisGrotesqueBlack, BasisGrotesqueMedium, AvenirNext-Bold, HelveticaNeue-Bold, 'Roboto Bold', sans-serif;
+            font-size:16px;
+            line-height:24px">
+        [Email] has sent you a message from <a style="color:#83C8E4;" href="https://imrtls00.xyz/contact/">Contact-Page</a>.
+    </span>
+                          </p>
+                          <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-top:2px solid #e7e7e7">
+                            <tr>
+                              <td align="center" style="padding:25px 0 20px">
+                                <span>
+                    <img width="70" height="70" src="https://imrtls00.xyz/wp-content/uploads/2022/04/client-image.png"
+                         style="border-radius:35px;-moz-border-radius:35px;-webkit-border-radius:35px;"/>
+                </span>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="message_box_blurple" width="100%" align="center" style="padding:10px;border:1px solid #593CFB">
+                                [Message]
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="center" style="padding:20px">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td align="center" width="100%">
+                                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                          <td align="center" bgcolor="#593CFB">
+                                            <a href="mailto:[Email]" style="font-size:18px;font-family:BasisGrotesqueRegular, BasisGrotesqueMedium, Avenir-Medium, HelveticaNeue-Medium, 'Roboto Medium', sans-serif;color:white;text-decoration: none; padding: 8px 80px; border: 1px solid #593CFB; display: inline-block;">Reply</a>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" style="width:100%!important;">
+                      <tr>
+                        <td align="center" width="100%" style="padding:10px 0 20px;">
+                          <table width="100%" border="0" cellspacing="0" cellpadding="0" style="border-bottom:2px solid #E5F1FF;width:100%!important;">
+                            <tr>
+                              <td align="center" width="100%" style="text-transform:uppercase;font-size:12px;padding:10px 0;color:#E5F1FF;letter-spacing:0.5px">
+                                <strong>More on Me</strong>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding-bottom:10px;text-align:center;font-family:BasisGrotesqueBlack, BasisGrotesqueMedium, AvenirNext-Bold, HelveticaNeue-Bold, 'Roboto Bold', sans-serif;font-weight:bold">
+                          <a href="https://imrtls00.xyz/" style="text-decoration:none;color:#E5F1FF;font-size:21px">
+                            Just another Tech Enthusiast!
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center" style="padding-bottom: 10px">
+                          <a href="https://imrtls00.xyz">
+                            <img class="skills-image" width="360" height="360" src="https://imrtls00.xyz/wp-content/uploads/2022/03/imrtls00-hero-1-768x768.png" alt="imrtls00-hero" title="imrtls00-hero">
+                          </a>
+                        </td>
+                      </tr>
+                    </table>
+                    <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" class="trip-details-wrapper" style="padding-top:10px;width:100%!important;">
+                      <tr>
+                        <td align="center" width="45%">
+                          <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                            <tr>
+                              <td style="text-align:center">
+                                <div style="font-family:BasisGrotesqueBlack, BasisGrotesqueMedium, AvenirNext-Bold, HelveticaNeue-Bold, 'Roboto Bold', sans-serif;font-size:12px;text-transform:uppercase;color:#898989;padding-bottom:5px;letter-spacing:0.5px">Happy Clients</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="color:#E5F1FF;text-align:center">
+                                <strong>
+                                                            7+
+                                                    </strong>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td width="10%" align="center">
+                          <img height="10" width="27" src="" style="border:none;outline:none;padding:0 20px;" />
+                        </td>
+                        <td align="center" width="45%">
+                          <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                            <tr>
+                              <td style="text-align:center">
+                                <div style="font-family:BasisGrotesqueBlack, BasisGrotesqueMedium, AvenirNext-Bold, HelveticaNeue-Bold, 'Roboto Bold', sans-serif;font-size:12px;text-transform:uppercase;color:#898989;padding-bottom:5px;letter-spacing:0.5px">Projects done</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="color:#E5F1FF;text-align:center">
+                                <strong>
+                                                            13+
+                                                    </strong>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <table align="center" width="100%" border="0" cellspacing="0" cellpadding="0" class="trip-details-wrapper" style="padding-top:20px;width:100%!important;">
+                      <tr>
+                        <td align="center" width="45%">
+                          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td align="center">
+                                <div style="font-family:BasisGrotesqueBlack, BasisGrotesqueMedium, AvenirNext-Bold, HelveticaNeue-Bold, 'Roboto Bold', sans-serif;font-size:12px;text-transform:uppercase;color:#898989;padding-bottom:5px;letter-spacing:0.5px">Certifications</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="color:#E5F1FF;"align="center">
+                                <strong>
+                                                                                                            4+
+                                                                                                                                        </strong>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                        <td width="10%" align="center">
+                          <div style="padding:0 35px"></div>
+                        </td>
+                        <td align="center" width="45%">
+                          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                              <td align="center">
+                                <div style="font-family:BasisGrotesqueBlack, BasisGrotesqueMedium, AvenirNext-Bold, HelveticaNeue-Bold, 'Roboto Bold', sans-serif;font-size:12px;text-transform:uppercase;color:#898989;padding-bottom:5px;letter-spacing:0.5px">Experience</div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td style="color:#E5F1FF;"align="center">
+                                <strong>
+                                                                    3+ Yrs
+                                                                                            </strong>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                    <table border="0" cellspacing="0" cellpadding="0" align="center" class="trip-float-wrapper" style="padding-top:10px;width:100%!important;">
+                      <tr>
+                        <td align="center" style="padding-top:20px">
+                          <table>
+                            <tr>
+                              <td>
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td align="center" width="100%">
+                                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                          <td align="center" bgcolor="#593CFB">
+                                            <a href="https://imrtls00.xyz/cv" download="Sameer Faisal's Resume.pdf" style="font-size:18px;font-family:BasisGrotesqueRegular, BasisGrotesqueMedium, Avenir-Medium, HelveticaNeue-Medium, 'Roboto Medium', sans-serif;color:white;text-decoration: none; padding: 8px 80px; border: 1px solid #593CFB; display: inline-block;">Download CV</a>
+                                          </td>
+                                        </tr>
+                                      </table>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <table border="0" cellspacing="0" cellpadding="0" align="center" class="trip-float-wrapper" style="width:100%!important;">
+                            <tr>
+                              <td align="center" style="padding:20px 0;font-size:12px;color:#E5F1FF;">
+                                <a style="color: lightblue; border-bottom: 2px solid lightblue; text-decoration:none;" href="https://imrtls00.xyz/portfolio">See Portfolio</a>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td style="padding:20px 0 0">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                      <tr>
+                        <td style="padding:20px 0 0;border-top:2px solid #e7e7e7;text-align:center;color:#999999;font-size:13px">
+                          <strong>NOTICE:</strong> This is an autogenerated Email, Sameer will reply you ASAP. Please keep checking your inbox periodically!
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+          </td>
+        </tr>
+      </table>
+      <table class="main-table" width="420" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="center" style="padding-bottom:30px">
+            <br /> <img class="footer-image" src="https://imrtls00.xyz/wp-content/uploads/2022/01/imrtls00-Portfolio-Logo.png" alt="imrtls00" title="imrtls00" width="82">
+          </td>
+        </tr>
+      </table>
+    </div>
+    </td>
+    </tr>
+    </table>
+    </div>
+ </body>
+</html>
